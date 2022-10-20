@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Churn Prediction App</title>
+	<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/css/mdb.min.css" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">Bank Credit Card Churn Prediction</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dataset">Dataset</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+
+    </ul>
+ <!--    <form class="form-inline my-2 my-lg-0" method="POST" action="/predict">
+      <input class="form-control mr-sm-2" type="text" name="namequery" placeholder="" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Predict</button>
+    </form> -->
+  </div>
+</nav>
+<br/>
+<br/>
+<!-- blue #0686e4 -->
+
+<!-- blue #0686e4 -->
+<div class="jumbotron" style="background:#2d2d2d;color:#fff">
+    <div class="container">
+      <h2 class="display-3">Bank Credit Card Churn Prediction</h2>
+      <p>Created by Temi Olorunfemi (PhD) </p>
+      <p><a class="btn btn-success waves-effect btn-lg" href="/" role="button">Refresh &raquo;</a></p>
+    </div>
+  </div>
+<br/>
+
+	
+<div class="container">
+	<form method = "POST" action="/predict">
+
+		<!-- Feature starts here -->
+		<!-- Clean Layout -->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+		          <div class="card mb-10 shadow-sm" id="custom_card">
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Customer_Age">Customer_Age</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Customer_Age" name="Customer_Age" min=18 max=120 value="18">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		
+
+					<div>
+		          	 <div class="form-check-inline">
+		          	 	<label class="form-check-label">
+		          	 	<h6>Gender</h6>
+		          	 </label>
+		          	 </div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="Gender" value="1" checked="checked">Male
+		          	  </label>
+		          	</div>
+		          	<div class="form-check-inline">
+		          	  <label class="form-check-label">
+		          	    <input type="radio" class="form-check-input" name="Gender" value="2">Female
+		          	  </label>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+
+
+					<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-group">
+		          	  <label for="Education_level">Education Level:</label>
+		          	  <select class="form-control" id="Education_level" name='Education_level'>
+		          	    <option value = "1">Graduate</option>
+						<option value = "2">High School</option>
+						<option value = "3">Uneduacted</option>
+						<option value = "4">College</option>
+						<option value = "5">PostGraduate</option>
+						<option value = "6">Doctorate</option>
+						<option value = "7">Unknown</option>
+		          	  </select>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+					<!-- Feature Starts here -->
+		
+
+					<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-group">
+		          	  <label for="Marital_Status">Marital Status:</label>
+		          	  <select class="form-control" id="Marital_Status" name='Marital_Status'>
+		          	    <option value = "1">Married</option>
+						<option value = "2">Single</option>
+						<option value = "3">Divorced</option>
+						<option value = "6">Unknown</option>
+		          	  </select>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+					<!-- Feature Starts here -->
+
+					<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-group">
+		          	  <label for="Income_Category">Income Category:</label>
+		          	  <select class="form-control" id="Income_Category" name='Income_Category'>
+		          	    <option value = "1">Less than $40K</option>
+						<option value = "2">$40K - $60K</option>
+						<option value = "4">$60K - $80K</option>
+						<option value = "3">$80K - $120K</option>
+						<option value = "5">$120K +</option>
+						<option value = "6">Unknown</option>
+		          	  </select>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+					<!-- Feature Starts here -->
+
+
+					<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+		          	<div>
+		          	 <div class="form-group">
+		          	  <label for="Card_Category">Card Category:</label>
+		          	  <select class="form-control" id="Card_Category" name='Card_Category'>
+		          	    <option value = "1">Blue</option>
+						<option value = "2">Silver</option>
+						<option value = "3">Gold</option>
+						<option value = "4">Platinum</option>
+		          	  </select>
+		          	</div>
+		          	</div>
+		          	<!-- Feature Ends here -->
+					<!-- Feature Starts here -->
+
+				</div>
+			</div>
+
+
+
+			<div class="col-md-5">
+		          <div class="card mb-10 shadow-sm" id="custom_card2">
+		          	
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Dependent_count">Dependent count:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Dependent_count" name="Dependent_count" min=0 value='3' max="5">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Total_Relationship_Count">Total_Relationship_Count:</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Total_Relationship_Count" name="Total_Relationship_Count" min=0 value='3' max="10">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Months_Inactive_12_mon">Months_Inactive</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Months_Inactive_12_mon" name="Months_Inactive_12_mon" min=0 value='3' max="10">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Contacts_Count_12_mon">Contacts_Count</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Contacts_Count_12_mon" name="Contacts_Count_12_mon" min=0 value='3' max="10">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Credit_Limit">Credit_Limit</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Credit_Limit" name="Credit_Limit" min=0 value='1000' max="10000">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Total_Revolving_Bal">Total_Revolving_Bal</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Total_Revolving_Bal" name="Total_Revolving_Bal" min=0 value='300' max="3000">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here --> 
+
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Total_Amt_Chng_Q4_Q1">Total_Amt_Chng_Q4_Q1</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Total_Amt_Chng_Q4_Q1" name="Total_Amt_Chng_Q4_Q1" min=0 value='3' max="10">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Total_Trans_Amt">Total_Trans_Amt</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Total_Trans_Amt" name="Total_Trans_Amt" min=0 value='3000' max="20000">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+					
+
+					<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Total_Ct_Chng_Q4_Q1">Total_Ct_Chng_Q4_Q1</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Total_Ct_Chng_Q4_Q1" name="Total_Ct_Chng_Q4_Q1" min=0 value='1' max="5">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+
+		          	<!-- Feature Ends here -->
+		          	 <!-- Feature Starts here -->
+		          	<div class="form-group">
+		          	  <label for="Avg_Utilization_Ratio">Avg_Utilization_Ratio</label>
+		          	  <input type="number" class="form-control form-control-sm" id="Avg_Utilization_Ratio" name="Avg_Utilization_Ratio" min=0 value='1' max="1">
+		          	</div>
+		          	<!-- Feature Ends here -->
+		          	<!-- Feature Starts here -->
+
+
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- Clean Layout ends here -->	
+<button type="reset" class="btn btn-outline-success">Reset</button>
+<button type="submit" class="btn btn-primary">Predict</button>
+</form>
+</div>
+<br/>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" >
+          <div class="card mb-10 shadow-sm" id="custom_card">
+          	<h4>Result</h4>
+          	<h6>Original Data</h6>
+          	<pre>{{ pretty_data }}</pre>
+          	<br/>
+
+			
+		</div>
+	</div>		
+	
+
+	<div class="col-md-6" >
+          <div class="card mb-10 shadow-sm" id="custom_card2" style="background-color:#2d2d2d; color:white;padding:5px">
+          	<h4>Prediction</h4>
+			<div class="alert alert-primary" role="alert">
+			  {{ final_result }}
+			</div>
+			<hr/>
+			
+			
+		</div>
+	</div>
+</div>
+	<br/>
+  <br/>
+  <br/>
+
+</div>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.3/js/mdb.min.js"></script>
+
+</body>
+</html>
+
