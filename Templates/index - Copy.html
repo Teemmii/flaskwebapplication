@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bank Churn Prediction App</title>
+</head>
+<body>
+	<div><h2>Bank Credit Card Churn Prediction</h2></div>
+<div class="container">
+	<form method = "POST" action="/predict">
+
+		<!-- Feature starts here -->
+		<div>
+			<label for="Customer_Age">Age</label>
+				<input type="number" name="Customer_Age"
+				min=18 max= 120 value = '18'>
+		</div>
+
+		<div>
+			<label for="Gender">Gender</label>
+				<input type="radio" name="Gender"
+				value = '1' checked="checked">
+				Male
+				<input type="radio" name="Gender"
+				value = '2'>
+				Female
+
+		</div>
+
+		<div>
+			<label for="Dependent_count">Number of Dependent</label>
+				<input type="number" name="Dependent_count"
+				min=0 max= 5 value = '3'>
+		</div>
+
+		<div>
+			<label for="Education_level">Education Level</label>
+				<select name="Education_level">
+					<option value = "1">Graduate</option>
+					<option value = "2">High School</option>
+					<option value = "3">Uneduacted</option>
+					<option value = "4">College</option>
+					<option value = "5">PostGraduate</option>
+					<option value = "6">Doctorate</option>
+					<option value = "7">Unknown</option>
+				</select>
+		</div>
+
+		<div>
+			<label for="Marital_Status">Marital Status</label>
+				<select name="Marital_Status">
+					<option value = "1">Married</option>
+					<option value = "2">Single</option>
+					<option value = "3">Divorced</option>
+					<option value = "6">Unknown</option>
+				</select>
+		</div>
+
+		<div>
+			<label for="Income_Category">Income Category</label>
+				<select name="Income_Category">
+					<option value = "1">Less than $40K</option>
+					<option value = "2">$40K - $60K</option>
+					<option value = "4">$60K - $80K</option>
+					<option value = "3">$80K - $120K</option>
+					<option value = "5">$120K +</option>
+					<option value = "6">Unknown</option>
+				</select>
+		</div>
+
+		<div>
+			<label for="Card_Category">Card Category</label>
+				<select name="Card_Category">
+					<option value = "1">Blue</option>
+					<option value = "2">Silver</option>
+					<option value = "3">Gold</option>
+					<option value = "4">Platinum</option>
+					
+				</select>
+		</div>
+
+		<div>
+			<label for="Total_Relationship_Count">Total_Relationship_Count</label>
+				<input type="number" name="Total_Relationship_Count"
+				min=0 max=10 value = '3'>
+		</div>
+
+		<div>
+			<label for="Months_Inactive_12_mon">Months_Inactive</label>
+				<input type="number" name="Months_Inactive_12_mon"
+				min=0 max=10 value = '3'>
+		</div>
+
+		<div>
+			<label for="Contacts_Count_12_mon">Contacts_Count</label>
+				<input type="number" name="Contacts_Count_12_mon"
+				min=0 max=10 value = '3'>
+		</div>
+
+
+		<div>
+			<label for="Credit_Limit">Credit_Limit</label>
+				<input type="number" name="Credit_Limit"
+				min=0 max=10000 value = '1000'>
+		</div>
+
+
+
+		<div>
+			<label for="Total_Revolving_Bal">Total_Revolving_Bal</label>
+				<input type="number" name="Total_Revolving_Bal"
+				min=0 max=3000 value = '300'>
+		</div>
+
+
+
+		<div>
+			<label for="Total_Amt_Chng_Q4_Q1">Total_Amt_Chng_Q4_Q1</label>
+				<input type="number" name="Total_Amt_Chng_Q4_Q1"
+				min=0 max=10 value = '3'>
+		</div>
+
+
+		<div>
+			<label for="Total_Trans_Amt">Total_Trans_Amt</label>
+				<input type="number" name="Total_Trans_Amt"
+				min=0 max=20000 value = '3000'>
+		</div>
+
+
+		<div>
+			<label for="Total_Ct_Chng_Q4_Q1">Total_Ct_Chng_Q4_Q1</label>
+				<input type="number" name="Total_Ct_Chng_Q4_Q1"
+				min=0 max=5 value = '1'>
+		</div>
+
+
+		<div>
+			<label for="Avg_Utilization_Ratio">Avg_Utilization_Ratio</label>
+				<input type="number" name="Avg_Utilization_Ratio"
+				min=0 max=1 value = '1'>
+		</div>
+
+
+
+
+
+
+		<!-- radiobutton -->
+
+		<button type="submit">Predict</button>
+		<button type="reset"> Reset</button>
+		<!-- select option -->
+		<!-- input(number) -->
+		
+	</form>
+	
+
+
+
+</div>
+<!--prediction layout -->
+
+<div class = "container">
+	<!--{{ sample_data }} -->
+
+	<h5>Pretty Data</h5> 
+	<p>{{ pretty_data }}</p>
+	<!--<h5>Encoded Data</h5> -->
+	<!--<h5>final_result</h5> -->
+	<!--<h5>prediction</h5>-->
+	<!--<p>{{ prediction}}</p>-->
+	<h5>prediction</h5>
+	<p>{{ final_result }}</p>
+	
+
+</div>
+
+
+</body>
